@@ -1,0 +1,43 @@
+# KeshCut Studio: every crawler may read everything. The named groups make that explicit for search engines and AI search.
+User-agent: *
+Allow: /
+
+# Search engines. Google also serves Chrome, Safari and Firefox searches, Bing serves Edge, Applebot serves Siri, Spotlight and Safari suggestions.
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# AI search and assistants (OAI-SearchBot is ChatGPT search, ChatGPT-User fetches pages when a person asks).
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Brave Search has no crawler name of its own. It follows Googlebot access, so the Googlebot group above covers it.
+# Training-only crawlers (GPTBot, Google-Extended, Applebot-Extended, ClaudeBot) fall under * and are allowed.
+# To stay in search but opt out of AI training, add for example:
+# User-agent: GPTBot
+# Disallow: /
+
+Sitemap: https://YOUR-DOMAIN.com/sitemap.xml
